@@ -4,16 +4,17 @@ interface Props {
   title: string;
   subtitle?: string;
   image?: string;
+  bgColor?: string;
 }
 
-const { title, subtitle, image } = Astro.props;
+const { title, subtitle, image, bgColor='bg-blue-950' } = Astro.props;
 ---
 
 <article
   class=`
     ${Astro.props.class}
     col-span-5
-    relative rounded-xl
+    relative rounded-2xl
     backdrop-blur-md
     border border-black/10
     shadow-inner shadow-white/10
@@ -28,13 +29,13 @@ const { title, subtitle, image } = Astro.props;
 
   {image && (
     <div
-      class="
+      class=`
         absolute left-0 top-0 bottom-0 h-full w-full
         group-hover:scale-110 transition-scale duration-1000
         ease-in-out opacity-90 bg-blend-luminosity bg-center
-        bg-cover bg-no-repeat -z-10 bg-blue-950
-      "
-      style=`background-image: url('/mountain.webp');`
+        bg-cover bg-no-repeat -z-10 ${bgColor}
+      `
+      style=`background-image: url('${image}');`
     />
   )}
 
