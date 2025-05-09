@@ -1,0 +1,15 @@
+---
+interface Props {
+  img: string;
+}
+---
+
+<div
+  style={{
+    backgroundImage: `url(${Astro.props.img})`,
+  }}
+  class="
+    cp-v relative h-[90vh] w-full max-w-[100vw]
+    bg-no-repeat bg-cover
+  "
+></div>

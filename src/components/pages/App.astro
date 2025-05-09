@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Video from '../../components/Video.astro';
+import Intro from '../../components/Intro.astro';
+import Bento from '../../components/Bento.astro';
+import PreFooter from '../../components/PreFooter.astro';
+
+import { getI18n } from "../../i18n";
+
+const i18n = getI18n(Astro.currentLocale);
+---
+
+<Layout
+	title={i18n.SEO_TITLE}
+	description={i18n.SEO_DESCRIPTION}
+>
+	<Video />
+	<main>
+		<Intro />
+		<Bento />
+		<PreFooter />
+	</main>
+</Layout>

@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import { getI18n } from "../../i18n";
+import HeroContainer from "../HeroContainer.astro";
+
+const i18n = getI18n(Astro.currentLocale);
+---
+
+<Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION}>
+	<HeroContainer img="/archivo-background.webp" />
+</Layout>
