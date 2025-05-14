@@ -1,0 +1,17 @@
+---
+interface Props {
+  class?: string;
+  href: string;
+}
+---
+
+<a
+  href={Astro.props.href}
+  class={`
+    border rounded-full inline-block border-white px-4 py-2 justify-self-end
+    hover:bg-white hover:text-black duration-300
+    ${Astro.props.class}
+  `}
+>
+  <slot/>
+</a>

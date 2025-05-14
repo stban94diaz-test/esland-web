@@ -3,10 +3,24 @@ import Layout from "../../layouts/Layout.astro";
 
 import { getI18n } from "../../i18n";
 import HeroContainer from "../HeroContainer.astro";
+import Button from "../Button.astro";
 
 const i18n = getI18n(Astro.currentLocale);
 ---
 
 <Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION}>
-	<HeroContainer img="/archivo-background.webp" />
+	<HeroContainer img="/archivo-background.webp">
+		<h1 class="text-6xl uppercase mb-20 font-medium font-[Tomaso] tracking-widest">
+			Ediciones anteriores
+		</h1>
+
+		<Button
+			href="https://www.youtube.com/watch?v=1YmpPrqKP-g&ab_channel=TheGrefg"
+			class="animate-fade-up"
+		>
+			REVIVE LA ULTIMA GALA
+		</Button>
+	</HeroContainer>
+
+	<main></main>
 </Layout>

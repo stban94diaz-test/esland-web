@@ -12,4 +12,8 @@ interface Props {
     cp-v relative h-[90vh] w-full max-w-[100vw]
     bg-no-repeat bg-cover
   "
-></div>
+>
+  <div class="absolute inset-0 m-auto w-full h-full flex justify-center flex-col items-center">
+    <slot />
+  </div>
+</div>
