@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import { getI18n } from "../../i18n";
 import HeroContainer from "../HeroContainer.astro";
 import Button from "../Button.astro";
+import Numbers from "../Numbers.astro";
 
 const i18n = getI18n(Astro.currentLocale);
 ---
@@ -22,5 +23,7 @@ const i18n = getI18n(Astro.currentLocale);
 		</Button>
 	</HeroContainer>
 
-	<main></main>
+	<main>
+		<Numbers />
+	</main>
 </Layout>
