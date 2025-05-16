@@ -5,6 +5,8 @@ import { getI18n } from "../../i18n";
 import HeroContainer from "../HeroContainer.astro";
 import Button from "../Button.astro";
 import Numbers from "../Numbers.astro";
+// import Gallery from "../Gallery.astro";
+import Gallery from "../Gallery";
 
 const i18n = getI18n(Astro.currentLocale);
 ---
@@ -24,6 +26,8 @@ const i18n = getI18n(Astro.currentLocale);
 	</HeroContainer>
 
 	<main>
+		<!-- <Gallery /> -->
+		<Gallery client:visible />
 		<Numbers />
 	</main>
 </Layout>

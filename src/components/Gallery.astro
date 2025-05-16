@@ -1,0 +1,45 @@
+---
+import editionsInfo from "../assets/gallery-data.json"
+import "photoswipe/style.css";
+---
+
+<div class="grid grid-cols-3 max-w-6xl gap-6 mx-auto py-20" id="gallery">
+  {
+    editionsInfo[1].map((dataImg, i) => {
+      const urlImg = `/archivo-page/1/gallery/img-${i + 1}.webp`;
+
+      return (
+        <a
+          href={urlImg}
+          target="_blank"
+          data-pswp-width={dataImg.width}
+          data-pswp-height={dataImg.height}
+        >
+          <img
+            loading="lazy"
+            src={urlImg}
+            class="
+              rounded-xl w-full h-[400px] object-cover
+              shadow-xl shadow-blue-400/10
+              hover:shadow-2xl hover:shadow-blue-500/75
+              transition-all overflow-hidden hover:scale-105
+            "
+            alt={`img-${i + 1}`}
+          />
+        </a>
+      );
+    })
+  }
+</div>
+
+<script>
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: "#gallery",
+    children: "a",
+    pswpModule: () => import("photoswipe"),
+  });
+
+  lightbox.init();
+</script>
